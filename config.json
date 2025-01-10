@@ -1,56 +1,73 @@
 {
-    "name": "Calendar Mate ",
-
-    "namespace": "Stanford\\CalMate",
-
-    "description": "This EM will pull the Stanford Email calendar and allow people to book an available time. ",
-
-    "documentation": "README.md",
-
-    "framework-version": 16,
-
-    "authors": [
-        {
-            "name": "Ihab Zeedia",
-            "email": "ihab.zeedia@stanford.edu",
-            "institution": "Stanford University"
-        }
-    ],
-
-    "permissions": [
-
-    ],
-
-    "enable-every-page-hooks-on-system-pages": false,
-    "links": {
-        "project": [
-
-        ],
-        "control-center": [
-
-        ]
-    },
-
-    "no-auth-pages": [
-
-    ],
-
-    "project-settings": [
-
-    ],
-
-    "system-settings": [
-
-    ],
-
-    "crons": [
-
-    ],
-
-    "compatibility": {
-        "php-version-min": "",
-        "php-version-max": "",
-        "redcap-version-min": "",
-        "redcap-version-max": ""
+  "name": "Calendar Mate ",
+  "namespace": "Stanford\\CalMate",
+  "description": "This EM will pull the Stanford Email calendar and allow people to book an available time. ",
+  "documentation": "README.md",
+  "framework-version": 16,
+  "authors": [
+    {
+      "name": "Ihab Zeedia",
+      "email": "ihab.zeedia@stanford.edu",
+      "institution": "Stanford University"
     }
+  ],
+  "enable-every-page-hooks-on-system-pages": false,
+  "links": {
+    "project": [
+    ],
+    "control-center": [
+    ]
+  },
+  "no-auth-pages": [
+  ],
+  "project-settings": [
+    {
+      "key": "microsoft_client_id",
+      "name": "<b>Microsoft Client Id</b><br/>",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "key": "microsoft_client_secret",
+      "name": "<b>Microsoft Client Secret</b><br/>",
+      "required": true,
+      "type": "text"
+    },    {
+      "key": "microsoft_tenant_id",
+      "name": "<b>Microsoft Tenant ID</b><br/>",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "key": "users",
+      "name": "<b>Define Shared Email that you want to pull calendar for</b>",
+      "required": true,
+      "type": "sub_settings",
+      "repeatable": true,
+      "sub_settings": [
+        {
+          "key": "email_address",
+          "name": "<b>Shared Email Address</b><br/>",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "key": "email_access_token",
+          "name": "<b>Shared Email Address</b><br/>",
+          "required": true,
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "system-settings": [
+  ],
+  "crons": [
+  ],
+  "compatibility": {
+    "php-version-min": "",
+    "php-version-max": "",
+    "redcap-version-min": "",
+    "redcap-version-max": ""
+  }
 }
